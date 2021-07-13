@@ -2,6 +2,8 @@
 
 Ansible role that creates a markdown file based on a variable list of dicts
 
+[![Build Status](https://app.travis-ci.com/guistela/ansible_create_markdown.svg?branch=main)](https://app.travis-ci.com/guistela/ansible_create_markdown)
+
 # Role Variables
 
 | Parameter | Choices/defaults | Comments |
