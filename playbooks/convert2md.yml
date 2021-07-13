@@ -1,0 +1,32 @@
+---
+
+- hosts: localhost
+  gather_facts: no
+  vars:
+    path_to: "../"
+    dict_list:
+      - name: Dummy List 1
+        rules:
+          - name: Test1
+            id: 1
+            content: "Content Test 1"
+          - name: Test2
+            id: 2
+            content: "Content Test 2"
+          - name: Test3
+            id: 3
+            content: "Content Test 3"
+    - name: Dummy List 1
+        rules:
+          - name: Test1
+            id: 1
+            content: "Content Test 1"
+          - name: Test2
+            id: 2
+            content: "Content Test 2"
+          - name: Test3
+            id: 3
+            content: "Content Test 3"
+
+  roles:
+    - role: ../ansible_create_markdown

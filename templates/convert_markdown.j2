@@ -1,0 +1,26 @@
+# Name: {{ rulesname }}
+## Count: {{ rules|length }}  
+{{ '| '+ (rules[0].keys() | list | join(' | ')) + ' |' }}
+{% for line in rules %}
+{% if loop.index == 1 %}
+{% for eachline in line.values() %}
+{% if loop.index == 1 %}
+{{- '| ------' -}}
+{% elif eachline == (line.values()|last) %}
+{{- ' | ----- |' }}
+{% else %}
+{{- ' | -----' -}}
+{% endif %}
+{% endfor %}
+{% endif %}
+{%- for inline in line.values() -%}
+{% if inline == (line.values()|first)%}
+{{-'| '+inline|replace('|','\|') -}}
+{% elif inline == (line.values()|last)%}
+{{- ' | '+inline|replace('|','\|') + ' |'-}}
+{% else %}
+{{-' | '+inline|replace('|','\|')-}}
+{% endif %}        
+{%- endfor %}
+
+{% endfor %}
