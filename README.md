@@ -1,10 +1,12 @@
-# Ansible Jinja2 create markdown file
+Ansible Jinja2 create markdown file
+-------
 
 Ansible role that creates a markdown file based on a variable list of dicts
 
 [![Build Status](https://app.travis-ci.com/guistela/ansible_create_markdown.svg?branch=main)](https://app.travis-ci.com/guistela/ansible_create_markdown)
 
-# Role Variables
+Role Variables
+-------
 
 | Parameter | Choices/defaults | Comments |
 | ------ | ----- | ----- |
@@ -56,7 +58,8 @@ Check the syntax like the example, or use the playbook at playbooks folder.
 
 
 
-## Input and expected results
+Input and expected results
+-------
 
 The following variable will produce the following markdown table in the file:
 
@@ -106,6 +109,15 @@ The following variable will produce the following markdown table in the file:
 
 The more contents you have in yout dict list, the more collumns/rows it will create in the .md file.
 Be concearned to provide path and user with proper write privileges for the template module to create the files.
+
+Running a Playbook
+-------
+
+If provided the role variables at the Play level, run the command this at the path of the project:
+
+    ansible-playbook playbooks/convert2md.yml -i tests/inventory
+
+Or provide the required info via extra-vars using the parameter `-e ` or `--extra-vars`
 
 License
 -------
