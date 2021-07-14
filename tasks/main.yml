@@ -4,6 +4,7 @@
   template:
     src: convert_markdown.j2
     dest: "{{ path_to }}{{ rulesname |replace(' ','') }}.md"
+    mode: '0644'
   vars:
     rules: "{{ inputitem.rules }}"
     rulesname: "{{ inputitem.name }}"
