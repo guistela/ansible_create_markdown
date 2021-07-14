@@ -16,7 +16,7 @@
           - name: Test3
             id: 3
             content: "Content Test 3"
-    - name: Dummy List 1
+      - name: Dummy List 2
         rules:
           - name: Test1
             id: 1
