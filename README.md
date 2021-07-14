@@ -19,11 +19,41 @@ There is no other role dependency.
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Check the syntax like the example, or use the playbook at playbooks folder.
 
-    - hosts: servers
+    ---
+
+    - hosts: localhost
+      gather_facts: no
+      vars:
+        path_to: "../"
+        dict_list:
+          - name: Dummy List 1
+            rules:
+              - name: Test1
+                id: 1
+                content: "Content Test 1"
+              - name: Test2
+                id: 2
+                content: "Content Test 2"
+              - name: Test3
+                id: 3
+                content: "Content Test 3"
+          - name: Dummy List 2
+            rules:
+              - name: Test1
+                id: 1
+                content: "Content Test 1"
+              - name: Test2
+                id: 2
+                content: "Content Test 2"
+              - name: Test3
+                id: 3
+                content: "Content Test 3"
+
       roles:
-         - { role: username.rolename, x: 42 }
+        - role: ../ansible_create_markdown
+
 
 
 ## Input and expected results
@@ -72,6 +102,10 @@ The following variable will produce the following markdown table in the file:
     | Test1 | 1 | Content Test 1 |
     | Test2 | 2 | Content Test 2 |
     | Test3 | 3 | Content Test 3 |
+
+
+The more contents you have in yout dict list, the more collumns/rows it will create in the .md file.
+Be concearned to provide path and user with proper write privileges for the template module to create the files.
 
 License
 -------
